@@ -21,6 +21,10 @@ def read_img(path):
         img = np.asarray(temp_img) #convert img numpy array :D
         return img
 
+def write_img(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+
 print('Welcome to Pygmentize!')
 bwImage = read_img(flags.img_path)
 if bwImage.any(): #verify img is in numpy array
