@@ -1,0 +1,20 @@
+COLORS
+main 1 - #e90dca
+main 2 - #1536f1
+logo - #ffffff
+font - #202124
+
+FONTS
+logo - Space Grotesque -> https://fonts.google.com/specimen/Space+Grotesk?preview.text=Pygmentize&preview.text_type=custom&query=space#glyphs
+headers - Space Grotesque -> https://fonts.google.com/specimen/Space+Grotesk?preview.text=Pygmentize&preview.text_type=custom&query=space#glyphs
+paragraphs - Montserret -> https://fonts.google.com/specimen/Montserrat?query=montse#standard-styles
+
+HEADINGS
+h1 - 48px, Space Grotesque, 600
+h2 - 36px, Space Grotesque, 500
+h3 - 24px, Space Grotesque, 500
+h4 - 18px, Space Grotesque, 400
+h5 - 16px, Space Grotesque, 400
+h6 - 14px, Space Grotesque, 300
+p - 12px, Montserrat, 300
+button - 16px, Montserrat, 500
