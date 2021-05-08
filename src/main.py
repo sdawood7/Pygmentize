@@ -21,6 +21,7 @@ def read_img(path):
         img = np.asarray(temp_img) #convert img numpy array :D
         return img
 
+#write numpy img to output file
 def write_img(path):
     if not os.path.exists(path):
         os.makedirs(path)
