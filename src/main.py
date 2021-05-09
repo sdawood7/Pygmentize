@@ -1,5 +1,7 @@
 import os
 import argparse
+import datetime
+import dateutil.tz
 import cv2 as cv
 import numpy as np
 
@@ -13,6 +15,7 @@ green_ratio = 0.3334
 parser = argparse.ArgumentParser()
 #this is an argument for the directory of an img
 parser.add_argument("--img_path", type=str)
+parser.add_argument("--out_path", type=str)
 #this stores the values of the parsed command line arguments
 flags = parser.parse_args()
 
@@ -22,15 +25,26 @@ def read_img(path):
         print("Could not find given path. Please enter a valid path to the image.")
         return np.array(0)
 
-    with open(path, "r") as f:
-        temp_img = cv.imread(path)
-        img = np.asarray(temp_img) #convert img numpy array :D
-        return img
+    temp_img = cv.imread(path)
+    img = np.asarray(temp_img) #convert img numpy array :D
+    return img
 
 #write numpy img to output file
-def write_img(path):
+def write_img(path, img):
+    if path is None:
+        print("No output path given. Please enter a valid path to the image.")
+        return
+
     if not os.path.exists(path):
         os.makedirs(path)
+
+    now = datetime.datetime.now(dateutil.tz.tzlocal())
+    timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
+
+    img_path ="{}{}.png".format(path, timestamp)
+    with open(img_path, "w") as f:
+        cv.imwrite(img_path, img)
+        return
 
 def img_to_bw(img):
     def pixel_to_bw(pixel_val):
@@ -41,9 +55,11 @@ def img_to_bw(img):
     for i in range(gray_img.shape[0]):
         for j in range(gray_img.shape[1]):
             gray_img[i][j] = pixel_to_bw(img[i][j])
+    return gray_img
 
 print('Welcome to Pygmentize!')
 bwImage = read_img(flags.img_path)
 if bwImage.any(): #verify img is in numpy array
-    img_to_bw(bwImage)
+    new_img = img_to_bw(bwImage)
+    write_img(flags.out_path, new_img)
     print("Success!")
