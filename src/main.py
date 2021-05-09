@@ -57,9 +57,13 @@ def img_to_bw(img):
             gray_img[i][j] = pixel_to_bw(img[i][j])
     return gray_img
 
-print('Welcome to Pygmentize!')
-bwImage = read_img(flags.img_path)
-if bwImage.any(): #verify img is in numpy array
-    new_img = img_to_bw(bwImage)
-    write_img(flags.out_path, new_img)
-    print("Success!")
+def main():
+    print('Welcome to Pygmentize!')
+    bwImage = read_img(flags.img_path)
+    if bwImage.any(): #verify img is in numpy array
+        new_img = img_to_bw(bwImage)
+        write_img(flags.out_path, new_img)
+        print("Success!")
+
+if __name__ == '__main__':
+    main()
