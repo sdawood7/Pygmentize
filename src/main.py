@@ -14,8 +14,8 @@ green_ratio = 0.3334
 #this object is used to parse command line arguments :D
 parser = argparse.ArgumentParser()
 #this is an argument for the directory of an img
-parser.add_argument("--img_path", type=str)
-parser.add_argument("--out_path", type=str)
+parser.add_argument("--img_path", type=str, help="The path to the input image.")
+parser.add_argument("--out_dir", type=str, default=".\out_dir\\", help="The directory path to output new images to.")
 #this stores the values of the parsed command line arguments
 flags = parser.parse_args()
 
