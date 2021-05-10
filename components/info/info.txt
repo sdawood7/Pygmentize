@@ -10,11 +10,11 @@ headers - Space Grotesque -> https://fonts.google.com/specimen/Space+Grotesk?pre
 paragraphs - Montserret -> https://fonts.google.com/specimen/Montserrat?query=montse#standard-styles
 
 HEADINGS
-h1 - 48px, Space Grotesque, 600
-h2 - 36px, Space Grotesque, 500
-h3 - 24px, Space Grotesque, 500
-h4 - 18px, Space Grotesque, 400
-h5 - 16px, Space Grotesque, 400
-h6 - 14px, Space Grotesque, 300
-p - 12px, Montserrat, 300
-button - 16px, Montserrat, 500
+h1 - 48px, Space Grotesque, 600, line-height: 1.5em, letter-spacing: 5%
+h2 - 36px, Space Grotesque, 500, line-height: 1.5em, letter-spacing: 3%
+h3 - 24px, Space Grotesque, 500, line-height: 1.5em, letter-spacing: 2%
+h4 - 18px, Space Grotesque, 400, line-height: 1.5em, letter-spacing: 2%
+h5 - 16px, Space Grotesque, 400, line-height: 1.5em, letter-spacing: 2%
+h6 - 14px, Space Grotesque, 300, line-height: 1.5em, letter-spacing: 2%
+p - 12px, Montserrat, 300, line-height: 1.5em
+button - 16px, Montserrat, 500, line-height: 1.5em
