@@ -5,11 +5,17 @@ import dateutil.tz
 import cv2 as cv
 import numpy as np
 
-#constants for converting to bw image from color
+#constants for converting from color to bw
 #ratios MUST add to 1.0
-red_ratio = 0.3333
-blue_ratio = 0.3333
-green_ratio = 0.3334
+red_c2b_ratio = 0.3333
+blue_c2b_ratio = 0.3333
+green_c2b_ratio = 0.3334
+
+#constants for converting from bw to color
+#sum of ratios must be <= 3.0
+red_b2c_ratio = 0.3333
+blue_b2c_ratio = 0.3333
+green_b2c_ratio = 0.3334
 
 #this object is used to parse command line arguments :D
 parser = argparse.ArgumentParser()
@@ -49,13 +55,26 @@ def write_img(path, img):
 def img_to_bw(img):
     def pixel_to_bw(pixel_val):
         red, blue, green = pixel_val[0], pixel_val[1], pixel_val[2]
-        return int((red_ratio * red) + (blue_ratio * blue) + (green_ratio * green))
-    
+        return int((red_c2b_ratio * red) + (blue_c2b_ratio * blue) + (green_c2b_ratio * green))
+
     gray_img = np.ndarray([img.shape[0], img.shape[1]], dtype=int)
     for i in range(gray_img.shape[0]):
         for j in range(gray_img.shape[1]):
             gray_img[i][j] = pixel_to_bw(img[i][j])
     return gray_img
+
+def img_to_col(img):
+    def pixel_to_col(pixel_val):
+        red = pixel_val * red_b2c_ratio
+        blue = pixel_val * blue_b2c_ratio
+        green = pixel_val * green_b2c_ratio
+        return [red, blue, green]
+
+    color_img = np.ndarray([img.shape[0], img.shape[1], 3], dtype=int)
+    for i in range(color_img.shape[0]):
+        for j in range(color_img.shape[1]):
+            color_img[i][j] = pixel_to_col(img[i][j])
+    return color_img
 
 def main():
     print('Welcome to Pygmentize!')
