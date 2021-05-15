@@ -19,4 +19,5 @@ h6 - 14px, Space Grotesque, 300, line-height: 1.5em, letter-spacing: 2%
 p - 12px, Montserrat, 300, line-height: 1.5em
 button - 16px, Montserrat, 500, line-height: 1.5em
 
-Some comment
+How to load the live server
+In the terminal -> python .\src\flask_tutorial.py
