@@ -19,11 +19,10 @@ ratios_to_col = {'red' : 1.0, 'blue' : 0.0, 'green' : 1.0}
 
 def main():
     print('Welcome to Pygmentize!')
-    img = Image()
-    bwImage = img.read_img(flags.img_path)
+    bwImage = Image.read_img(flags.img_path)
     if bwImage.any(): #verify img is in numpy array
-        new_img = img.img_to_col(bwImage, ratios_to_col)
-        img.write_img(flags.out_path, new_img)
+        new_img = Image.img_to_col(bwImage, ratios_to_col)
+        Image.write_img(flags.out_path, new_img)
         print("Success!")
 
 if __name__ == '__main__':

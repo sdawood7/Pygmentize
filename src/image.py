@@ -6,11 +6,9 @@ import numpy as np
 
 #class to encapsulate functions for images
 class Image:
-    def __init__(self):
-        pass
-
     #this function checks to see if the path was valid and also reads the image :D
-    def read_img(self, path):
+    @staticmethod
+    def read_img(path):
         if not os.path.exists(path):
             print("Could not find given path. Please enter a valid path to the image.")
             return np.array(0)
@@ -20,7 +18,8 @@ class Image:
         return img
 
     #write numpy img to output file
-    def write_img(self, path, img):
+    @staticmethod
+    def write_img(path, img):
         if path is None:
             print("No output path given. Please enter a valid path to the image.")
             return
@@ -35,8 +34,9 @@ class Image:
         with open(img_path, "w") as f:
             cv.imwrite(img_path, img)
             return
-
-    def img_to_bw(self, img, ratios):
+    
+    @staticmethod
+    def img_to_bw(img, ratios):
         def pixel_to_bw(pixel_val):
             blue, green, red = pixel_val[0], pixel_val[1], pixel_val[2]
             return ((ratios['blue'] * blue), (ratios['green'] * green), (ratios['red'] * red)) #Return the sum of the ratios of each pixel value
@@ -47,7 +47,8 @@ class Image:
                 gray_img[i][j] = pixel_to_bw(img[i][j]) 
         return gray_img
 
-    def img_to_col(self, img, ratios):
+    @staticmethod
+    def img_to_col(img, ratios):
         def pixel_to_col(pixel_val):
             blue = int(pixel_val * ratios['blue']) #Calculate the blue value based on the given ratio
             green = int(pixel_val * ratios['green']) #Calculate the green value based on the given ratio
