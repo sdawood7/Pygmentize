@@ -16,6 +16,7 @@ red_b2c_ratio = 1
 blue_b2c_ratio = 0
 green_b2c_ratio = 1
 
+#class to encapsulate functions for images
 class Image:
     def __init__(self):
         pass
