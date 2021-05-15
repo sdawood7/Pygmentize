@@ -9,13 +9,20 @@ parser.add_argument("--out_path", type=str, default=".\out_dir\\", help="The dir
 #this stores the values of the parsed command line arguments
 flags = parser.parse_args()
 
+#constants for converting from color to bw
+#ratios in range from 0.0 <= x <= 1.0
+ratios_to_bw = {'red' : 1.0, 'blue' : 1.0, 'green' : 1.0}
+
+#constants for converting from bw to color
+#ratios in range from 0.0 <= x <= 1.0
+ratios_to_col = {'red' : 1.0, 'blue' : 0.0, 'green' : 1.0}
 
 def main():
     print('Welcome to Pygmentize!')
     img = Image()
     bwImage = img.read_img(flags.img_path)
     if bwImage.any(): #verify img is in numpy array
-        new_img = img.img_to_col(bwImage)
+        new_img = img.img_to_col(bwImage, ratios_to_col)
         img.write_img(flags.out_path, new_img)
         print("Success!")
 
