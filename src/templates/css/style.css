@@ -85,6 +85,11 @@ body{
   SPECIFIC ITEMS
   ========================================
 */
+header{
+  position: fixed;
+  top: 1%;
+  left: 5%;
+}
 .logo{
   height: 7vh;
   width: auto;
@@ -101,6 +106,15 @@ body{
 body{
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main{
+  background: white;
+  width: 90vw;
+  height: 80vh;
+  border-radius: 20px;
 }
 /*
   ========================================
