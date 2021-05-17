@@ -32,7 +32,7 @@ class Image:
 
         img_path ="{}{}.png".format(path, timestamp)
         with open(img_path, "w") as f:
-            cv.imwrite(img_path, img)
+            cv.imwrite(img_path, img) #Write image to given path
             return
     
     @staticmethod
