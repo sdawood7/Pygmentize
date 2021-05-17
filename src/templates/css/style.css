@@ -44,6 +44,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+button{
+  border: none;
+}
 /*
   ========================================
   Style Reset END
@@ -69,8 +72,32 @@ table {
   BASE COLORS & FONTS
   ========================================
 */
-html{
+html *{
   font-size: 62.5%;
+  line-height: 150%;
+  font-family: 'Montserrat', sans-serif;
+}
+h1{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4.8vh;
+  font-weight: bold;
+  letter-spacing: 5%;
+}
+p{
+  font-size: 1.5vh;
+  font-weight: light;
+}
+button{
+  font-weight: 600;
+  font-size: 1.7vh;
+  background: #1536F1;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+.link{
+  color: #1536F1;
+  text-decoration: underline;
 }
 /*
   ========================================
@@ -115,6 +142,22 @@ main{
   width: 90vw;
   height: 80vh;
   border-radius: 20px;
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.imgContainer{
+  height: auto;
+  width: 45%;
+}
+.mainImg{
+  height: 80%;
+  width: auto;
+}
+.img{
+  height: 100%;
+  width: auto;
+  border-radius: 20px;
 }
 /*
   ========================================
@@ -127,7 +170,18 @@ main{
   INTERACTIVE
   ========================================
 */
+.link:hover, button:hover{
+  cursor: pointer;
+}
+button:hover{
+  background: #7f22de;
+  transition: .3s;
+}
 
+button:active, button:focus{
+  filter: brightness(1.2);
+  transition: .7s;
+}
 /*
   ========================================
   MEDIA QUERIES
