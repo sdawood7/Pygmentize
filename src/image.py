@@ -8,7 +8,7 @@ import numpy as np
 class Image:
     #this function checks to see if the path was valid and also reads the image :D
     @staticmethod
-    def read_img(path):
+    def read_img_file(path):
         if not os.path.exists(path):
             print("Could not find given path. Please enter a valid path to the image.")
             return np.array(0)
@@ -16,6 +16,24 @@ class Image:
         temp_img = cv.imread(path)
         img = np.asarray(temp_img) #convert img numpy array :D
         return img
+
+    @staticmethod
+    def read_imgs(path):
+        img_list = list()
+        if not os.path.exists(path):
+            print("Could not find given path. Please enter a valid path to the image.")
+            return img_list
+
+        if os.path.isdir(path):
+            for filename in os.listdir(path):
+                img_list.append(Image.read_img_file(os.path.join(path, filename)))
+            return img_list
+
+        if os.path.isfile(path):
+            img_list.append(Image.read_img_file(path))
+            return img_list
+
+        return img_list
 
     #write numpy img to output file
     @staticmethod
