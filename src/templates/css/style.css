@@ -87,14 +87,21 @@ p{
   font-size: 1.5vh;
   font-weight: light;
 }
-button{
+button, input[type=file]::file-selector-button{
   font-weight: 600;
   font-size: 1.7vh;
   background: #1536F1;
   color: white;
+  border: none;
   border-radius: 10px;
   padding: 10px;
 }
+
+input{
+  font-weight: 600;
+  font-size: 1.7vh;
+}
+
 .link{
   color: #1536F1;
   text-decoration: underline;
@@ -173,7 +180,7 @@ main{
 .link:hover, button:hover{
   cursor: pointer;
 }
-button:hover{
+input:hover{
   background: #7f22de;
   transition: .3s;
 }
