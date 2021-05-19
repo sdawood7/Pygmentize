@@ -19,7 +19,7 @@ ratios_to_col = {'red' : 1.0, 'blue' : 0.0, 'green' : 1.0}
 
 def main():
     print('Welcome to Pygmentize!')
-    img_list = Image.read_imgs(flags.img_path)
+    img_list = Image.read_imgs(flags.img_path) #List for multiple images!
     for img in img_list:
         if img.any():
             new_img = Image.img_to_col(img, ratios_to_col)
