@@ -46,7 +46,7 @@ class Image:
             os.makedirs(path)
 
         now = datetime.datetime.now(dateutil.tz.tzlocal())
-        timestamp = now.strftime("%Y_%m_%d_%H_%M_%S")
+        timestamp = now.strftime("%Y_%m_%d_%H_%M_%S") #Use the current time to ensure a file is created without conflicts.
 
         img_path ="{}{}.png".format(path, timestamp)
         with open(img_path, "w") as f:
