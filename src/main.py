@@ -21,7 +21,7 @@ def main():
     print('Welcome to Pygmentize!')
     img_list = Image.read_imgs(flags.img_path) #List for multiple images!
     for img in img_list:
-        if img.any():
+        if img.any(): #check if any images were read
             new_img = Image.img_to_col(img, ratios_to_col)
             Image.write_img(flags.out_path, new_img)
     print("Success!")
