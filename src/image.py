@@ -24,7 +24,7 @@ class Image:
             print("Could not find given path. Please enter a valid path to the image.")
             return img_list
 
-        if os.path.isdir(path):
+        if os.path.isdir(path): #if this path is a directory, read multiple files
             for filename in os.listdir(path):
                 img_list.append(Image.read_img_file(os.path.join(path, filename)))
             return img_list
