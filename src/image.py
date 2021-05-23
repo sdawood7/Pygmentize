@@ -22,16 +22,13 @@ class Image:
         img_list = list()
         if not os.path.exists(path):
             print("Could not find given path. Please enter a valid path to the image.")
-            return img_list
 
-        if os.path.isdir(path): #if this path is a directory, read multiple files
+        elif os.path.isdir(path): #if this path is a directory, read multiple files
             for filename in os.listdir(path):
                 img_list.append(Image.read_img_file(os.path.join(path, filename)))
-            return img_list
 
-        if os.path.isfile(path): #if this path is a filepath, only read one file
+        elif os.path.isfile(path): #if this path is a filepath, only read one file
             img_list.append(Image.read_img_file(path))
-            return img_list
 
         return img_list
 
