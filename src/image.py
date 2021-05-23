@@ -29,7 +29,7 @@ class Image:
                 img_list.append(Image.read_img_file(os.path.join(path, filename)))
             return img_list
 
-        if os.path.isfile(path):
+        if os.path.isfile(path): #if this path is a filepath, only read one file
             img_list.append(Image.read_img_file(path))
             return img_list
 
