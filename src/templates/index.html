@@ -43,14 +43,25 @@
             <section>
                 <h1>Bring your pictures to life!</h1>
                 <p>Upload a picture, pick a color, and PYGMENTIZE</p>
-                <form action="/action_page.php">
                     <input type="file" id="myFile" name="filename" class="btn addBtn">
-                    <input type="submit" class="btn submitBtn">
-                  </form>
+                    <input type="submit" class="btn submitBtn" onclick="pygmentize()">
                 <!-- <button>Upload Image</button>
                 <p class="link">or drop a file</p> -->
             </section>
        </main>
+       
+       <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+       <script>
+           function pygmentize(){
+               $.ajax({
+                   url: "../test.py",
+                   context: document.body
+               }).done(function() {
+                alert('pygmentized!!');
+                console.log('!!!!!!!!!!!!!!!!!!!!!!!');
+               });
+           }
+       </script>
     </body>
 </html>
