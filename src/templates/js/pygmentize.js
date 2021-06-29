@@ -1,10 +1,14 @@
-function pygmentize(the_name_of_the_file){
+function pygmentize(){
+
+    var filename = $('input[name=filename]').val()
+
     $.ajax({
-        url: "../test.py",
+        // type: 'post',
+        url: "../main.py",
         context: document.body,
-        data:{}
+        data:{ img_path: filename }
     }).done(function() {
-     alert('pygmentized!!');
+     alert(filename);
      console.log('!!!!!!!!!!!!!!!!!!!!!!!');
     });
 }
