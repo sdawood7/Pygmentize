@@ -24,7 +24,7 @@
             </div>
         </header>
        <main>
-            <div class="imgContainer">
+            <section class="imgContainer">
                 <div class="mainImg">  
                     <img src="color_imgs/color_1.png" class="img" alt="">
                 </div>
@@ -39,12 +39,14 @@
                         <img src="" alt="">
                     </div>
                 </div>
-            </div>
-            <section>
+            </section>
+            <section class="words">
                 <h1>Bring your pictures to life!</h1>
                 <p>Upload a picture, pick a color, and PYGMENTIZE</p>
                     <input type="file" id="myFile" name="filename" class="btn addBtn">
-                    <input type="submit" class="btn submitBtn" onclick="pygmentize()">
+                    <div class="btnContainer">
+                        <input type="submit" class="btn submitBtn" onclick="pygmentize()">
+                    </div>
                 <!-- <button>Upload Image</button>
                 <p class="link">or drop a file</p> -->
             </section>

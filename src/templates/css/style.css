@@ -87,7 +87,7 @@ p{
   font-size: 1.5vh;
   font-weight: light;
 }
-button, input[type=file]::file-selector-button{
+button, input[type=file]::file-selector-button, input[type=submit]{
   font-weight: 600;
   font-size: 1.7vh;
   background: #1536F1;
@@ -95,13 +95,15 @@ button, input[type=file]::file-selector-button{
   border: none;
   border-radius: 10px;
   padding: 10px;
+  transition: .25s;
 }
-
+input[type=submit]{
+  background: #E90DCA;
+}
 input{
   font-weight: 600;
   font-size: 1.7vh;
 }
-
 .link{
   color: #1536F1;
   text-decoration: underline;
@@ -119,10 +121,13 @@ body{
   SPECIFIC ITEMS
   ========================================
 */
+body{
+  padding: 2% 5%;
+}
 header{
   position: fixed;
-  top: 1%;
-  left: 5%;
+  top: 2%;
+  left: 6%;
 }
 .logo{
   height: 7vh;
@@ -147,24 +152,30 @@ body{
 main{
   background: white;
   width: 90vw;
+  max-width: 1200px;
   height: 80vh;
   border-radius: 20px;
   padding: 5%;
   display: flex;
   justify-content: space-between;
 }
-.imgContainer{
-  height: auto;
-  width: 45%;
+section{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding:5%;
+  flex-direction: column;
 }
 .mainImg{
-  height: 80%;
+  height: 100%;
   width: auto;
 }
 .img{
-  height: 100%;
-  width: auto;
+  width: 100%;
   border-radius: 20px;
+}
+.words *{
+  margin: .5vh 0;
 }
 /*
   ========================================
@@ -180,11 +191,15 @@ main{
 .link:hover, button:hover{
   cursor: pointer;
 }
-input:hover{
+input[type=file]:hover {
+  border: 1px solid #7f22de;
+  transition: .3s;
+}
+input[type=submit]:hover{
+  cursor: pointer;
   background: #7f22de;
   transition: .3s;
 }
-
 button:active, button:focus{
   filter: brightness(1.2);
   transition: .7s;
@@ -194,3 +209,43 @@ button:active, button:focus{
   MEDIA QUERIES
   ========================================
 */
+/* 19" Desktop ----------- */
+@media only screen 
+and (max-device-width : 1440px){
+/* */
+}
+/* Microsoft Surface Pro ----------- */
+@media only screen 
+and (max-device-width : 1440px) and (max-device-height : 1024px){
+/* */
+}
+/* Apple iPad Pro ----------- */
+@media only screen 
+and (max-device-width : 1366px) and (max-device-height : 1024px){
+/* */
+}
+/* Samsung Galaxy Tablet ----------- */
+@media only screen 
+and (max-device-width : 1280px) and (max-device-height : 800px){
+/* */
+}
+/* 12" Notebook ----------- */
+@media only screen 
+and (max-device-width : 1024px){
+/* */
+}
+/* Samsung Galaxy Tablet 7 & 10" Notebook ----------- */
+@media only screen 
+and (max-device-width : 1024px) and (max-device-height : 600px){
+/* */
+}
+/* Kindle Fire HD 7" ----------- */
+@media only screen 
+and (max-device-width : 800px){
+/* */
+}
+/* Apple iPhone 6/7 ----------- */
+@media only screen 
+and (max-device-width : 425px){
+  /* the header section */
+}
