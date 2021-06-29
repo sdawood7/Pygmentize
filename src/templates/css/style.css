@@ -191,10 +191,10 @@ section{
 .link:hover, button:hover{
   cursor: pointer;
 }
-input[type=file]:hover {
+/* input[type=file]:hover {
   border: 1px solid #7f22de;
   transition: .3s;
-}
+} */
 input[type=submit]:hover{
   cursor: pointer;
   background: #7f22de;
